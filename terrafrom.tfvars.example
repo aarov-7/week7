@@ -1,0 +1,4 @@
+project_network  = "project_xxxxxxxx"
+ssh_allowed_cidr = "x.x.x.x/32"
+student_name     = "Your name"
+page_message     = "Hello"

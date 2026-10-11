@@ -1,0 +1,22 @@
+#cloud-config
+package_update: true
+packages:
+  - apache2
+
+write_files:
+  - path: /var/www/html/index.html
+    owner: root:root
+    permissions: "0644"
+    defer: true
+    content: |
+      <!DOCTYPE html>
+      <html>
+        <head><title>${student_name}</title></head>
+        <body>
+          <h1>${student_name}</h1>
+          <p>${page_message}</p>
+        </body>
+      </html>
+
+runcmd:
+  - systemctl enable --now apache2
